@@ -6,10 +6,28 @@
     <description>Recent content on Star&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Jan 2019 16:40:11 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 29 Jan 2019 12:00:25 +0800</lastBuildDate>
     
 	<atom:link href="https://star-safe.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Safe</title>
+      <link>https://star-safe.github.io/categories/safe/</link>
+      <pubDate>Tue, 29 Jan 2019 12:00:25 +0800</pubDate>
+      
+      <guid>https://star-safe.github.io/categories/safe/</guid>
+      <description>safe</description>
+    </item>
+    
+    <item>
+      <title>Note</title>
+      <link>https://star-safe.github.io/categories/note/</link>
+      <pubDate>Tue, 29 Jan 2019 12:00:21 +0800</pubDate>
+      
+      <guid>https://star-safe.github.io/categories/note/</guid>
+      <description>note</description>
+    </item>
     
     <item>
       <title>About</title>
@@ -27,6 +45,15 @@
       
       <guid>https://star-safe.github.io/post/2/</guid>
       <description>222222</description>
+    </item>
+    
+    <item>
+      <title>life</title>
+      <link>https://star-safe.github.io/categories/life/</link>
+      <pubDate>Sun, 27 Jan 2019 16:10:28 +0800</pubDate>
+      
+      <guid>https://star-safe.github.io/categories/life/</guid>
+      <description>life</description>
     </item>
     
     <item>
