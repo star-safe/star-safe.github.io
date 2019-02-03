@@ -40,11 +40,11 @@
     
     <item>
       <title>上传漏洞</title>
-      <link>https://star-safe.github.io/post/safe/</link>
+      <link>https://star-safe.github.io/post/upload/</link>
       <pubDate>Sun, 03 Feb 2019 17:14:00 +0800</pubDate>
       
-      <guid>https://star-safe.github.io/post/safe/</guid>
-      <description></description>
+      <guid>https://star-safe.github.io/post/upload/</guid>
+      <description>一、客户端绕过。 基本上都是js起作用。 1.禁用本地js。 2.按f12更改本地js代码。 3.上传jpg通过burpsuite更改为网站代码语言</description>
     </item>
     
     <item>

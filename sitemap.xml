@@ -18,7 +18,7 @@
   </url>
   
   <url>
-    <loc>https://star-safe.github.io/post/safe/</loc>
+    <loc>https://star-safe.github.io/post/upload/</loc>
     <lastmod>2019-02-03T17:14:00+08:00</lastmod>
   </url>
   
@@ -92,6 +92,12 @@
   <url>
     <loc>https://star-safe.github.io/tags/tag2/</loc>
     <lastmod>2019-02-03T17:30:51+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://star-safe.github.io/tags/%E4%B8%8A%E4%BC%A0/</loc>
+    <lastmod>2019-02-03T17:14:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
