@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tag1 on Star&#39;s Blog</title>
+    <link>https://star-safe.github.io/tags/tag1/</link>
+    <description>Recent content in tag1 on Star&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Feb 2019 17:30:51 +0800</lastBuildDate>
+    
+	<atom:link href="https://star-safe.github.io/tags/tag1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>投资理财</title>
+      <link>https://star-safe.github.io/post/financial/</link>
+      <pubDate>Sun, 03 Feb 2019 17:30:51 +0800</pubDate>
+      
+      <guid>https://star-safe.github.io/post/financial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>生活</title>
+      <link>https://star-safe.github.io/post/life/</link>
+      <pubDate>Sun, 03 Feb 2019 17:17:53 +0800</pubDate>
+      
+      <guid>https://star-safe.github.io/post/life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>运维笔记</title>
+      <link>https://star-safe.github.io/post/operations/</link>
+      <pubDate>Sun, 03 Feb 2019 17:15:13 +0800</pubDate>
+      
+      <guid>https://star-safe.github.io/post/operations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>上传漏洞</title>
+      <link>https://star-safe.github.io/post/safe/</link>
+      <pubDate>Sun, 03 Feb 2019 17:14:00 +0800</pubDate>
+      
+      <guid>https://star-safe.github.io/post/safe/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

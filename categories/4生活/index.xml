@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>4生活 on Star&#39;s Blog</title>
+    <link>https://star-safe.github.io/categories/4%E7%94%9F%E6%B4%BB/</link>
+    <description>Recent content in 4生活 on Star&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Feb 2019 17:17:53 +0800</lastBuildDate>
+    
+	<atom:link href="https://star-safe.github.io/categories/4%E7%94%9F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>生活</title>
+      <link>https://star-safe.github.io/post/life/</link>
+      <pubDate>Sun, 03 Feb 2019 17:17:53 +0800</pubDate>
+      
+      <guid>https://star-safe.github.io/post/life/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
