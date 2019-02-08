@@ -26,16 +26,6 @@ namespace Emojione;
  *
  */
 
-define('DISQUS_PUBKEY', 'E8Uh5l5fHZ6gD8U3KycjAIAk46f68Zw7C6eW8WSjZvCLXebZ7p0r1yrYDrLilk2F');
-define('PUBLIC_KEY', 'V2fgQEUTnT5DMeb1dvCUyuqFFJS6H9garyqunrHA7Sz5v4Uoc7mrqpoQ0YO428cJ');
-define('SECRET_KEY', 'VDxxOyUJ1MyjXKIXtaP7BLAbaoY7P9VeyLH5R8ggrCHHkcsd06GuNRksXJGgJZsM');
-define('DISQUS_USERNAME', 'hfjstar@gmail.com');
-define('DISQUS_EMAIL', 'hfjstar@gmail.com');
-define('DISQUS_PASSWORD', 'MCDH,cnhk@123disqus');
-define('DISQUS_WEBSITE', 'https://star-safe.github.io');
-define('DISQUS_SHORTNAME', 'star-safe');
-define('DISQUS_APPROVED', true);
-
 /*
  * 图片设置
  *
