@@ -6,18 +6,45 @@
     <description>Recent content in Posts on Star&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Feb 2019 17:30:51 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 Feb 2019 13:51:19 +0800</lastBuildDate>
     
 	<atom:link href="https://star-safe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>投资理财</title>
+      <title>XSS知识</title>
+      <link>https://star-safe.github.io/post/xss/</link>
+      <pubDate>Fri, 08 Feb 2019 13:51:19 +0800</pubDate>
+      
+      <guid>https://star-safe.github.io/post/xss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL注入</title>
+      <link>https://star-safe.github.io/post/sql/</link>
+      <pubDate>Sun, 03 Feb 2019 23:31:20 +0800</pubDate>
+      
+      <guid>https://star-safe.github.io/post/sql/</guid>
+      <description>一、基于注入点值的属性 数字型 字符型 二、基于注入点的位置 GET/POST COOKIE HEAD型 三、基于注入的程度和顺序 一阶注入 二阶注入 注：一阶注入指注入的语句直接对w</description>
+    </item>
+    
+    <item>
+      <title>定投</title>
       <link>https://star-safe.github.io/post/financial/</link>
       <pubDate>Sun, 03 Feb 2019 17:30:51 +0800</pubDate>
       
       <guid>https://star-safe.github.io/post/financial/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>记账小方法</title>
+      <link>https://star-safe.github.io/post/moneywiz/</link>
+      <pubDate>Sun, 03 Feb 2019 17:30:51 +0800</pubDate>
+      
+      <guid>https://star-safe.github.io/post/moneywiz/</guid>
+      <description>理财的重中之重就是记账，只有记好账才能明确自己现在的财务状况，以便更好的做预算和降低支出，https://sspai.com/post/40</description>
     </item>
     
     <item>

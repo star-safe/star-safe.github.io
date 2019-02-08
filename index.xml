@@ -6,18 +6,45 @@
     <description>Recent content on Star&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Feb 2019 17:30:51 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 Feb 2019 13:51:19 +0800</lastBuildDate>
     
 	<atom:link href="https://star-safe.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>投资理财</title>
+      <title>XSS知识</title>
+      <link>https://star-safe.github.io/post/xss/</link>
+      <pubDate>Fri, 08 Feb 2019 13:51:19 +0800</pubDate>
+      
+      <guid>https://star-safe.github.io/post/xss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL注入</title>
+      <link>https://star-safe.github.io/post/sql/</link>
+      <pubDate>Sun, 03 Feb 2019 23:31:20 +0800</pubDate>
+      
+      <guid>https://star-safe.github.io/post/sql/</guid>
+      <description>一、基于注入点值的属性 数字型 字符型 二、基于注入点的位置 GET/POST COOKIE HEAD型 三、基于注入的程度和顺序 一阶注入 二阶注入 注：一阶注入指注入的语句直接对w</description>
+    </item>
+    
+    <item>
+      <title>定投</title>
       <link>https://star-safe.github.io/post/financial/</link>
       <pubDate>Sun, 03 Feb 2019 17:30:51 +0800</pubDate>
       
       <guid>https://star-safe.github.io/post/financial/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>记账小方法</title>
+      <link>https://star-safe.github.io/post/moneywiz/</link>
+      <pubDate>Sun, 03 Feb 2019 17:30:51 +0800</pubDate>
+      
+      <guid>https://star-safe.github.io/post/moneywiz/</guid>
+      <description>理财的重中之重就是记账，只有记好账才能明确自己现在的财务状况，以便更好的做预算和降低支出，https://sspai.com/post/40</description>
     </item>
     
     <item>
@@ -54,6 +81,40 @@
       
       <guid>https://star-safe.github.io/about/</guid>
       <description>一个网络安全的爱好者。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://star-safe.github.io/disqus/dist/disqus-php-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://star-safe.github.io/disqus/dist/disqus-php-api/</guid>
+      <description>  Disqus PHP API 示例  body{ max-width: 640px; width: 100%; margin: 0 auto; overflow-x: hidden; } body  * { width: 100%; } body a{ color: #0095dd; }     本页共有  条评论
+ 项目地址：https://github.com/fooleap/disqus-php-api
+ var disq = new iDisqus(&#39;comment&#39;, { forum: &#39;fooleap&#39;, site: &#39;http://blog.fooleap.org&#39;, api: &#39;http://api.fooleap.org/disqus&#39;, mode: 2, timeout: 3000, popular: document.getElementById(&#39;popular-posts&#39;), init: true, }); disq.popular(); disq.count();    </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://star-safe.github.io/disqus/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://star-safe.github.io/disqus/readme/</guid>
+      <description>Disqus PHP API 利用 PHP cURL 转发 Disqus API 请求
+ Disqus 被墙，故做几个简单的接口，用于墙内环境访问 Disqus。
+ 实现功能  评论列表 评论发表 图片上传 Gravatar 头像 Emoji 表情 邮件通知 ……  Disqus 设置 使用 API 实现匿名评论功能，需在 Disqus 后台网站设置，设置相关选项。
+ 开启匿名评论，Guest Commenting 项中勾选 Allow guests to comment。 若需评论免审，Pre-moderation 项选中 None。  后端  需要部署在境外服务器。 依赖于 PHP 5.6+，采用 PHP cURL 请求 Disqus API，以获取评论数据，发送访客评论等操作。 配置文件为 config.php，有简单说明。  重要 必须在 Disqus API 申请注册一个 App，取得相关的公钥（API Key）、私钥（API Secret），并填写于后端的配置文件 config.php 中。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://star-safe.github.io/disqus/src/demo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://star-safe.github.io/disqus/src/demo/</guid>
+      <description>  Disqus PHP API 示例  body{ max-width: 640px; width: 100%; margin: 0 auto; overflow-x: hidden; } body  * { width: 100%; } body a{ color: #0095dd; }     本页共有  条评论
+ 项目地址：https://github.com/fooleap/disqus-php-api
+ var disq = new iDisqus(&#39;comment&#39;, { forum: &#39;fooleap&#39;, site: &#39;http://blog.fooleap.org&#39;, api: &#39;http://api.fooleap.org/disqus&#39;, mode: 2, timeout: 3000, popular: document.getElementById(&#39;popular-posts&#39;), init: true, }); disq.popular(); disq.count();    </description>
     </item>
     
     <item>
