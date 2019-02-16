@@ -43,18 +43,6 @@
   </url>
   
   <url>
-    <loc>https://star-safe.github.io/disqus/dist/disqus-php-api/</loc>
-  </url>
-  
-  <url>
-    <loc>https://star-safe.github.io/disqus/readme/</loc>
-  </url>
-  
-  <url>
-    <loc>https://star-safe.github.io/disqus/src/demo/</loc>
-  </url>
-  
-  <url>
     <loc>https://star-safe.github.io/search/placeholder/</loc>
   </url>
   
@@ -85,11 +73,6 @@
   <url>
     <loc>https://star-safe.github.io/categories/</loc>
     <lastmod>2019-02-08T13:51:19+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://star-safe.github.io/disqus/</loc>
     <priority>0</priority>
   </url>
   
