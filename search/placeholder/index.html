@@ -253,18 +253,6 @@ if (!doNotTrack) {
                 
 <div id="disqus-comment"></div>
 
-<script src="/js/iDisqus.js"></script>
-<script>
-var disq = new iDisqus('disqus-comment', {
-    forum: 'star-safe',
-    api: 'http:\/\/64.137.164.238',
-	site: '',
-    mode: 1,
-    timeout: 5000,
-    init: true
-});
-</script>
-
 
 
             </div>
@@ -312,7 +300,21 @@ var disq = new iDisqus('disqus-comment', {
         </div>
     </div>
 </article>
-
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    id: '页面 ID', 
+    owner: ‘star-safe’,
+    repo: ‘star-safe.github.io’,
+    oauth: {
+      client_id: 'bc93370d4135640544c9',
+      client_secret: '6e2bfc6f3c584a04013d42b9369091a6058f8994',
+    },
+  })
+  gitment.render('container')
+</script>
 
 
 
