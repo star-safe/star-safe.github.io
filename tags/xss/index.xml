@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>xss on Star&#39;s Blog</title>
+    <link>https://star-safe.github.io/tags/xss/</link>
+    <description>Recent content in xss on Star&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 Feb 2019 13:51:19 +0800</lastBuildDate>
+    
+	<atom:link href="https://star-safe.github.io/tags/xss/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>XSS知识</title>
+      <link>https://star-safe.github.io/post/xss/</link>
+      <pubDate>Fri, 08 Feb 2019 13:51:19 +0800</pubDate>
+      
+      <guid>https://star-safe.github.io/post/xss/</guid>
+      <description>#xss的分类 ##1.反射型XSS 通过在页面上植入恶意链接，诱使用户点击，执行js脚本，所谓反射型XSS就是将用户输入的数据（恶意用户输入的</description>
+    </item>
+    
+  </channel>
+</rss>

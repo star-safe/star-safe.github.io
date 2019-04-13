@@ -163,8 +163,8 @@ if (!doNotTrack) {
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/tag1" title="tag1">
-                            tag1
+                        <a class="tag" href="/tags/xss" title="xss">
+                            xss
                         </a>
                         
                     </div>
@@ -204,7 +204,14 @@ if (!doNotTrack) {
                 </header>
                 
                 
-                
+                <p>#xss的分类
+##1.反射型XSS
+通过在页面上植入恶意链接，诱使用户点击，执行js脚本，所谓反射型XSS就是将用户输入的数据（恶意用户输入的js脚本），“反射”到浏览器执行。
+##2.存储性XSS
+此类XSS漏洞是指，用户输入的数据（恶意代码）可以“存储”在服务端，只要有人访问这个包含有存储型XSS代码的页面，XSS脚本就会在他们的浏览器中执行，这种XSS具有很强的稳定性。所以也被称做，“持久型XSS”。
+##3.DOM型XSS
+类似于反射型XSS，但是，这种XSS攻击的实现是通过对DOM树的修改而实现的。</p>
+
 
                 
                 
@@ -252,7 +259,7 @@ if (!doNotTrack) {
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/post/sql/" data-toggle="tooltip" data-placement="top" title="SQL注入">&larr;
+                        <a href="/post/sql%E6%B3%A8%E5%85%A5%E5%88%86%E7%B1%BB/" data-toggle="tooltip" data-placement="top" title="SQL注入种类">&larr;
                             Previous Post</a>
                     </li>
                     
@@ -292,11 +299,25 @@ var disq = new iDisqus('disqus-comment', {
                         
                         
                         
+                        <a href="/tags/sql%E6%B3%A8%E5%85%A5" title="SQL注入">
+                            SQL注入
+                        </a>
+                        
+                        
+                        
                         
                         
                         <a href="/tags/tag1" title="tag1">
                             tag1
                         </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -312,7 +333,7 @@ var disq = new iDisqus('disqus-comment', {
                     <h5>友链</h5>
                     <ul class="list-inline">
                         
-                        <li><a target="_blank" href="https://aoii103.github.io">aoii103的博客</a></li>
+                        <li><a target="_blank" href="https://pyocean.com">进击的ROBOT</a></li>
                         
                     </ul>
                 </section>

