@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tag1 on Star&#39;s Blog</title>
-    <link>https://star-safe.github.io/tags/tag1/</link>
-    <description>Recent content in tag1 on Star&#39;s Blog</description>
+    <title>记账 on Star&#39;s Blog</title>
+    <link>https://star-safe.github.io/tags/%E8%AE%B0%E8%B4%A6/</link>
+    <description>Recent content in 记账 on Star&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 03 Feb 2019 17:30:51 +0800</lastBuildDate>
     
-	<atom:link href="https://star-safe.github.io/tags/tag1/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://star-safe.github.io/tags/%E8%AE%B0%E8%B4%A6/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://star-safe.github.io/post/moneywiz/</guid>
       <description>理财的重中之重就是记账，只有记好账才能明确自己现在的财务状况，以便更好的做预算和降低支出，(https://sspai.com/post/4</description>
-    </item>
-    
-    <item>
-      <title>生活</title>
-      <link>https://star-safe.github.io/post/life/</link>
-      <pubDate>Sun, 03 Feb 2019 17:17:53 +0800</pubDate>
-      
-      <guid>https://star-safe.github.io/post/life/</guid>
-      <description></description>
     </item>
     
   </channel>
