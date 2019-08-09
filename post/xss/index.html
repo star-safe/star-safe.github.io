@@ -95,16 +95,16 @@ if (!doNotTrack) {
                     </li>
                     
                     <li>
-                        <a href="/categories/3%E7%90%86%E8%B4%A2">3理财</a>
+                        <a href="/categories/3%E7%AC%94%E8%AE%B0">3笔记</a>
                     </li>
                     
                     <li>
-                        <a href="/categories/4%E7%94%9F%E6%B4%BB">4生活</a>
+                        <a href="/categories/4%E7%90%86%E8%B4%A2">4理财</a>
                     </li>
                     
                     
 		    
-                        <li><a href="/about/">5关于我</a></li>
+                        <li><a href="/about/">关于我</a></li>
                     
 
                     
@@ -245,7 +245,7 @@ if (!doNotTrack) {
 
 <h2 id="3-dom型xss">3.DOM型XSS</h2>
 
-<p>类似于反射型XSS，但是，这种XSS攻击的实现是通过对DOM树的修改而实现的。</p>
+<p>用户可以从一个表单页提交数据，数据提交到服务期端后进行html编码后保存到数据库，然后有个修改这个提交信息的页面，会把信息从数据库里查询出来，填充到INPUT控件的VALUE属性里，来达到一个展示现有数据的效果。这里的数据在输出到value之前经过html编码的，所以输出到value里没有跨站的问题，但是这里程序为了实现一个其他功能，加了段js脚本，脚本取得前面提到的INPUT控件的VALUE，进行了一系列的动作和条件判断后，符合条件的话就把这个VALUE值放到一个DIV的INNERHTML里，这一放就放出了一个跨站问题来。可能你比较奇怪，不是VALUE里的值被HTML编码过了么，为什么这里还有问题呢，其实如果源代码是<code>VALUE=&quot;&lt;a&gt;&quot;</code>，虽然经过HTML编码，但是用脚本通过DOM的方式来取得VALUE的值的时候，又会被解码。</p>
 
 <h1 id="xss的传播方式">XSS的传播方式</h1>
 
@@ -315,6 +315,11 @@ if (!doNotTrack) {
                     </li>
                     
                     
+                    <li class="next">
+                        <a href="/post/ceye%E4%BD%BF%E7%94%A8/" data-toggle="tooltip" data-placement="top" title="Ceye使用">Next
+                            Post &rarr;</a>
+                    </li>
+                    
                 </ul>
 
                 
@@ -324,7 +329,7 @@ if (!doNotTrack) {
 <script>
 var disq = new iDisqus('disqus-comment', {
     forum: 'star-safe',
-    api: 'https:\/\/shadowocean.com\/disqus\/api\/',
+    api: 'https:\/\/star-safe.cn\/disqus\/api\/',
 	site: '',
     mode: 1,
     timeout: 5000,
@@ -347,6 +352,8 @@ var disq = new iDisqus('disqus-comment', {
                     <hr class="hidden-sm hidden-xs">
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
+                        
+                        
                         
                         
                         
