@@ -13,9 +13,9 @@
     <meta name="keyword"  content="Star的网络日志, 博客, 个人网站">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>记账小方法-Star&#39;s Blog</title>
+    <title>windows下navicat连接oracle-Star&#39;s Blog</title>
 
-    <link rel="canonical" href="/post/moneywiz/">
+    <link rel="canonical" href="/post/navicat%E8%BF%9E%E6%8E%A5oracle/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 	
@@ -163,12 +163,16 @@ if (!doNotTrack) {
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/%E8%AE%B0%E8%B4%A6" title="记账">
-                            记账
+                        <a class="tag" href="/tags/navicat" title="navicat">
+                            navicat
+                        </a>
+                        
+                        <a class="tag" href="/tags/oracle" title="oracle">
+                            oracle
                         </a>
                         
                     </div>
-                    <h1>记账小方法</h1>
+                    <h1>windows下navicat连接oracle</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
 			Posted by 
@@ -176,7 +180,7 @@ if (!doNotTrack) {
 			     &#34;star&#34;
 			 
 			on 
-			Sunday, February 3, 2019
+			Saturday, August 24, 2019
                         
                     </span>
                 </div>
@@ -204,29 +208,51 @@ if (!doNotTrack) {
                 </header>
                 <nav id="TableOfContents">
 <ul>
-<li><a href="#帮助他人付款">帮助他人付款</a></li>
-<li><a href="#朋友之间借钱">朋友之间借钱</a></li>
-<li><a href="#各类账户的分期还款">各类账户的分期还款</a></li>
+<li>
+<ul>
+<li><a href="#1-确定navicat版本">1、确定navicat版本</a></li>
+<li><a href="#2-instant-client版本选择">2、Instant Client版本选择</a></li>
+<li><a href="#3-下载instant-client版本">3、下载Instant Client版本</a></li>
+<li><a href="#4-安装instant-client">4、安装Instant Client</a></li>
+<li><a href="#5-配置环境变量">5、配置环境变量</a></li>
+</ul></li>
 </ul>
 </nav>
                 
                 
 
-<p>理财的重中之重就是记账，只有记好账才能明确自己现在的财务状况，以便更好的做预算和降低支出，(<a href="https://sspai.com/post/40829)该链接里作者对记账的分析和见解我认为是比较透彻的。">https://sspai.com/post/40829)该链接里作者对记账的分析和见解我认为是比较透彻的。</a><br />
-Moneywiz3作为口碑很好的一款功能强大的记账工具，能够生成详尽的报表，从而可以很直观地了解自己的财务状况，而且在Win,Mac, iOS, Android上都有自己的客户端，开始使用起来发现确实很强大。<br />
-记账中主要做的就是<strong>收入、支出、预算</strong>这三种记录，在记账的时候偶尔会遇到一些令人头疼的不知道如何去记录的支出，胡乱记录还会影响自己报表里的数据，让报表的效果大打折扣，因此在这里分享一下我在用该软件时遇到下面这些情况的记录方式，用来尽可能地还原自身真实的支出和收入数据，也能使得Moneywiz的报表能更精确地反应财政状况。</p>
+<p>当你初次使用navicat连接数据库的时候，可能会遇到报错，这是因为navicat自带的OCI模块跟你的数据库没有匹配上。那么OCI从哪里来？Oracle给大家提供了一个叫做Instant Client的东西。下面是官网的介绍：<br />
+<code>Free, light-weight, and easily installed Oracle Database tools, libraries and SDKs for building and connecting applications to an Oracle Database instance.
+Oracle Instant Client enables applications to connect to a local or remote Oracle Database for development and production deployment. The Instant Client libraries provide the necessary network connectivity, as well as basic and high end data features, to make full use of Oracle Database. It underlies the Oracle APIs of popular languages and environments including Node.js, Python and PHP, as well as providing access for OCI, OCCI, JDBC, ODBC and ProC applications. Tools included in Instant Client, such as SQLPlus and Oracle Data Pump, provide quick and convenient data access.</code><br />
+这一大堆话你看不明白没事，只要你看到“Free, light-weight, and easily”就可以。下面教你如何一步一步正确的进行配置让你的navicat能连接到ORACLE数据库。</p>
 
-<h1 id="帮助他人付款">帮助他人付款</h1>
+<h2 id="1-确定navicat版本">1、确定navicat版本</h2>
 
-<p>帮他人付款可以使用Moneywiz自带的容易被忽略的退款功能，使用了退款这个功能，这种类型的收款就可以很好的记录了。因为本质上帮助朋友付款然后朋友还你钱相当于一次退款行为。这种记账方法适用于类似AA收款或者返利刷单的一些记账需求。</p>
+<p>确定你的navicat版本是64位还是32位的。
+<img src="/images/navicat/navicat1.jpg" alt="avatar" /></p>
 
-<h1 id="朋友之间借钱">朋友之间借钱</h1>
+<h2 id="2-instant-client版本选择">2、Instant Client版本选择</h2>
 
-<p>朋友之间偶尔需要借钱。Moneywiz是没有借贷这一功能的，于是只能自己来实现了。可以设置一个贷款账户，专门用来记录每一次的借入借出。把每一次的出借当作贷款账户的收入，每一次的借钱当作贷款账户的支出。以此来保持净值上显示的是你准确的总资产。</p>
+<p>首先，进入安装数据库的服务器中，在cmd中输入<code>sqlplus / as sysdba</code>进入数据库，然后再输入<code>SELECT * FROM v$version</code>查看数据库版本。
+<img src="/images/navicat/navicat2.jpg" alt="avatar" /></p>
 
-<h1 id="各类账户的分期还款">各类账户的分期还款</h1>
+<h2 id="3-下载instant-client版本">3、下载Instant Client版本</h2>
 
-<p>当对某一样贵重物品心动，亦或是为了工作需要而产生巨额支出后，就自然而然的会有分期还款，但记分期还款又容易让人困惑。个人习惯在预定中写好还款日期时应还的钱款，在还款日的时候，会自动的在账单上增加上这一笔的支出，以此来简化每次都要在固定时间时在信用卡账户上增加一笔支出，这对于有多笔分期的小伙尤其好用。</p>
+<p>进入oracle官网，里面有很多版本，但是对于navicat，只要下载base版本即可，下面是下载地址：
+32位地址：<code>https://www.oracle.com/technetwork/cn/topics/winsoft-095945-zhs.html</code>
+64位地址：<code>https://www.oracle.com/technetwork/cn/topics/winx64soft-101515-zhs.html</code></p>
+
+<h2 id="4-安装instant-client">4、安装Instant Client</h2>
+
+<p>将下载完的压缩包进行解压，然后在navicat中配置即可，SQL-PLUS这一块按需求进行配置（一般不用配置），配置完成后记得重启。
+<img src="/images/navicat/navicat3.jpeg" alt="avatar" /></p>
+
+<h2 id="5-配置环境变量">5、配置环境变量</h2>
+
+<p>1、在环境变量PATH中开头增加C:\Instantclient10_2;(OCI.dll解压后位置)<br />
+2、增加用户环境变量SQLPATH，值为C:\Instantclient10_2(OCI.dll解压后位置)<br />
+3、增加用户环境变量NLS_LANG，值为AMERICAN_AMERICA.UTF8（使用UTF-8编码）
+PS:如果没有安装SQL&ndash;PLUS，可以不用第二条，第三条根据自身情况进行添加</p>
 
 
                 
@@ -275,15 +301,10 @@ Moneywiz3作为口碑很好的一款功能强大的记账工具，能够生成�
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/post/nmap/" data-toggle="tooltip" data-placement="top" title="nmap使用方法">&larr;
+                        <a href="/post/ceye%E4%BD%BF%E7%94%A8/" data-toggle="tooltip" data-placement="top" title="Ceye使用">&larr;
                             Previous Post</a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/post/%E5%AE%9A%E6%8A%95/" data-toggle="tooltip" data-placement="top" title="定投">Next
-                            Post &rarr;</a>
-                    </li>
                     
                 </ul>
 
